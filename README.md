@@ -57,4 +57,13 @@
           e. Tags images
           f. Login into your private Docker Registry.
           g. Pushes the tagged images into your private Docker registry
+          
+ ### Pepare Values for Pega Helm Charts
+ 
+ 12. Run the script ".\Scripts\5. Pepare Values for Pega Helm Charts.ps1". This scripts performs the following tasks.
+
+          a. Add the Pega repository to your Helm installation.
+          b. Get latest values-minimal.yaml
+          
+ 13. Conigure values-minimal.yaml file. You can make use of sample cofiguration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
 
