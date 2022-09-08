@@ -74,5 +74,5 @@
           b. Istalls pega helm charts passing values-values.yaml.
           
           
-          
+ ### Check Deployment Status  
  16. 
