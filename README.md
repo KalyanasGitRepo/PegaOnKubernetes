@@ -92,7 +92,7 @@ To gain some basic understanding on the deployment architecture please refer htt
         kubectl logs pega-app1-dev-minikube-0 --namespace=mypega
         
     
-  17 Run the following command to launch the service 
+  17 Run the following command that launches pega platform on the browser. 
    
         minikube service pega-app1-dev-minikube --namespace=mypega
    
