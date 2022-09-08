@@ -1,6 +1,10 @@
 # Pega Deployment On Kubernetes (Minikube)
 
-The following are the steps to be followed to containerize Pega platform on Kubernetes and connecting to Postgress database server running on the Host machine. For some basic understanding on the deployment architecture please refer https://docs.pega.com/client-managed-cloud/85/understanding-pega-deployment-architecture
+The following are the steps to be followed to containerize Pega platform on Kubernetes and connecting to Postgress database server running on the Host machine. 
+
+To gain some basic understanding on the deployment architecture please refer https://docs.pega.com/client-managed-cloud/85/understanding-pega-deployment-architecture
+
+### Prerequisites
 
 1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
@@ -69,7 +73,7 @@ The following are the steps to be followed to containerize Pega platform on Kube
           
  13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
 
- ### Deploy Pega on Kubernetes.ps1
+ ### Deploy Pega on Kubernetes
  14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This scripts performs the following tasks. 
 
           a. Create required namespace.
