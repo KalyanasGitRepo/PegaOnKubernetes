@@ -54,7 +54,7 @@
           b. Pulls the image for Platform/installe
           c. Pulls the image for Search n Reporting service
           d. Pulls the image for platform/clustering-service
-          e. Re-tags images
+          e. Tags images
           f. Login into your private Docker Registry.
-          g. Push the re-tagged images into your private Docker registry
+          g. Pushes the tagged images into your private Docker registry
 
