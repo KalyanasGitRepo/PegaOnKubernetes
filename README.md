@@ -1,4 +1,6 @@
-# PegaOnKubernetes
+# Pega Deployment On Kubernetes (Minukube)
+
+The following are the steps to be followed to containerize Pega platform on Kubernetes and connecting to Postgress database server running on the Host machine. For some basic understanding on the dpleoyment architecture please refer https://docs.pega.com/client-managed-cloud/85/understanding-pega-deployment-architecture
 
 1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
@@ -74,5 +76,39 @@
           b. Istalls pega helm charts passing values-values.yaml.
           
           
- ### Check Deployment Status  
- 16. 
+ ### Check Deployment Status  & launch pega interface
+ 16. Various commands to check the overall deployment status and Pod logs
+
+        kubectl get all --namespace=mypega
+        kubectl describe  pod pega-app1-dev-minikube-0 --namespace=mypega
+        kubectl describe  service pega-app1-dev-minikube --namespace=mypega
+        kubectl logs pega-app1-dev-minikube-0 --namespace=mypega
+    
+  17 Run the ollowing command to launch the service 
+   
+        minikube service pega-app1-dev-minikube --namespace=mypega
+   
+ # Key Points, Challenges & Solutions
+ 
+ 18. challenges & corrections I made during the deployment process.
+
+        a. Missing access rights on pega docker images repository. Raise a request for "My Pega Docker Image Access" from https://sm.pega.co and gained access to the repository.
+
+        b. Make sure correct version of docker images are mentioned the values.yaml for pega, pega-installer, hazelcast & Search images.
+
+        c. Probes timeout issues: Can be resolve by increasing initialDelaySeconds, timeoutSeconds, failureThreshold.
+
+        d. Incorrect Jdbc DriverUri: Replaced with correct version of Jdbc driver. The one mentioned in the sample values-minimal.yaml file should work with latest version of pega.
+
+        e. Connectivity issues between the host machine and Minikube pods & services. Make sure correct Host IP is mentioned for the Jdbc connection string.
+
+        f. Make sure values-minimal.yaml is configured with sufficient CPU and memory units.
+
+        g. Database conectivity issues: Make sure connection string tring is correctly cponfigured with the Host IP and Port number. Please check if database service is up and running.
+
+
+
+   
+   
+    
+
