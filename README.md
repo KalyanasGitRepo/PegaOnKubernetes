@@ -47,7 +47,7 @@
  ### Prepare Pega docker images for your installation.
  
 
-10. Run the script ".\Scripts\4. Prepare Docker Images.ps1". This scripts performs the following tasks.
+11. Run the script ".\Scripts\4. Prepare Docker Images.ps1". This scripts performs the following tasks.
 
           a. Login into Pega Docker Registry
           b. Pulls the image for Platform/pega
