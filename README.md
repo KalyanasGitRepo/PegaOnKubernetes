@@ -71,7 +71,7 @@ To gain some basic understanding on the deployment architecture please refer htt
           a. Add the Pega repository to your Helm installation.
           b. Get latest values-minimal.yaml
           
- 13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
+ 13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\Sample-values-minimal.yaml".  
 
  ### Deploy Pega on Kubernetes
  14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This scripts performs the following tasks. 
