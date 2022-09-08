@@ -20,7 +20,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Install docker
 
-7. Skip this step, if the docker desktop it is already installed. If not, run the script "1. Docker Install & Launch.ps1".
+7. Skip this step, if the docker desktop it is already installed. If not, run the script "1. Docker Install & Launch.ps1". This scripts performs the following tasks.
     
     a. Gets version of Docker Desktop Installer.exe
     
