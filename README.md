@@ -98,7 +98,7 @@ To gain some basic understanding on the deployment architecture please refer htt
    
  # Key Points, Challenges & Solutions
  
- 18. challenges & corrections I made during the deployment process.
+ 18. Key Points, Challenges & Solutions.
 
         a. Missing access rights on pega docker images repository. Raise a request for "My Pega Docker Image Access" from https://sm.pega.co and gained access to the repository.
 
