@@ -67,3 +67,12 @@
           
  13. Conigure values-minimal.yaml file. You can make use of sample cofiguration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
 
+ ### Deploy Pega on Kubernetes.ps1
+ 14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This scripts performs the following tasks. 
+
+          a. Create required namesspace.
+          b. Istall pega helm charts passing values-values.yaml.
+          
+          
+          
+ 16. 
