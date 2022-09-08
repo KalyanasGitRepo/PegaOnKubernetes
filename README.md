@@ -1,12 +1,12 @@
-# Pega Deployment On Kubernetes (Minukube)
+# Pega Deployment On Kubernetes (Minikube)
 
-The following are the steps to be followed to containerize Pega platform on Kubernetes and connecting to Postgress database server running on the Host machine. For some basic understanding on the dpleoyment architecture please refer https://docs.pega.com/client-managed-cloud/85/understanding-pega-deployment-architecture
+The following are the steps to be followed to containerize Pega platform on Kubernetes and connecting to Postgress database server running on the Host machine. For some basic understanding on the deployment architecture please refer https://docs.pega.com/client-managed-cloud/85/understanding-pega-deployment-architecture
 
 1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
 2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location.
 
-3. Make sure your have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository.
+3. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository.
 
 4. Download & install Pega Personal Edition https://community.pega.com/digital-delivery
 
@@ -30,7 +30,7 @@ The following are the steps to be followed to containerize Pega platform on Kube
 
     a. Download latest version of Minikube from https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe
 
-    b. Sets PATH environment valiable to appends Minikube installation path.
+    b. Sets PATH environment variable to append Minikube installation path.
 
     c. Launches Minikube with 4 CPU, and 12 GB Memory units
 
@@ -44,7 +44,7 @@ The following are the steps to be followed to containerize Pega platform on Kube
                 
                 b. Installs helm
                 
-                c. Sets PATH environment valiable to appends helm tools installation path.
+                c. Sets PATH environment variable to append helm tools installation path.
                 
  ### Prepare Pega docker images for your installation.
  
@@ -53,27 +53,27 @@ The following are the steps to be followed to containerize Pega platform on Kube
 
           a. Login into Pega Docker Registry
           b. Pulls the image for Platform/pega
-          b. Pulls the image for Platform/installe
+          b. Pulls the image for Platform/installer
           c. Pulls the image for Search n Reporting service
           d. Pulls the image for platform/clustering-service
           e. Tags images
           f. Login into your private Docker Registry.
           g. Pushes the tagged images into your private Docker registry
           
- ### Pepare Values for Pega Helm Charts
+ ### Prepare Values for Pega Helm Charts
  
- 12. Run the script ".\Scripts\5. Pepare Values for Pega Helm Charts.ps1". This scripts performs the following tasks.
+ 12. Run the script ".\Scripts\5. Prepare Values for Pega Helm Charts.ps1". This scripts performs the following tasks.
 
           a. Add the Pega repository to your Helm installation.
           b. Get latest values-minimal.yaml
           
- 13. Conigure values-minimal.yaml file. You can make use of sample cofiguration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
+ 13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\values-minimal.yaml".  
 
  ### Deploy Pega on Kubernetes.ps1
  14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This scripts performs the following tasks. 
 
-          a. Create required namesspace.
-          b. Istalls pega helm charts passing values-values.yaml.
+          a. Create required namespace.
+          b. Installs pega helm charts passing values-values.yaml.
           
           
  ### Check Deployment Status  & launch pega interface
@@ -84,7 +84,7 @@ The following are the steps to be followed to containerize Pega platform on Kube
         kubectl describe  service pega-app1-dev-minikube --namespace=mypega
         kubectl logs pega-app1-dev-minikube-0 --namespace=mypega
     
-  17 Run the ollowing command to launch the service 
+  17 Run the following command to launch the service 
    
         minikube service pega-app1-dev-minikube --namespace=mypega
    
@@ -104,7 +104,7 @@ The following are the steps to be followed to containerize Pega platform on Kube
 
         f. Make sure values-minimal.yaml is configured with sufficient CPU and memory units.
 
-        g. Database conectivity issues: Make sure connection string tring is correctly cponfigured with the Host IP and Port number. Please check if database service is up and running.
+        g. Database connectivity issues: Make sure connection string is correctly configured with the Host IP and Port number. Please check if database service is up and running.
 
 
 
