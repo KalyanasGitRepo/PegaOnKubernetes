@@ -53,7 +53,11 @@ To gain some basic understanding on the deployment architecture please refer htt
  ### Prepare Pega docker images for your installation.
  
 
-11. Run the script ".\Scripts\4. Prepare Docker Images.ps1". This scripts performs the following tasks.
+11. Run the follwing command with the correct paramater values. This scripts performs the tasks mentioned below.
+
+    Command: 
+    
+    ./Scripts/"4. Prepare Docker Images.ps1" pegaRegistryUserId pegaRegistryAPIKey pesonalRegistryUserId pesonalRegistryAPIKey
 
           a. Login into Pega Docker Registry
           b. Pulls the image for Platform/pega
