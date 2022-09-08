@@ -20,7 +20,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Install docker
 
-7. Skip this step, if the docker desktop it is already installed. If not, run the script "1. Docker Install & Launch.ps1". This scripts performs the following tasks.
+7. Skip this step, if the docker desktop it is already installed. If not, run the script "1. Docker Install & Launch.ps1". This script performs the following tasks.
     
     a. Gets version of Docker Desktop Installer.exe
     
@@ -30,7 +30,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Install Minikube
 
-9. Run the script ".\Scripts\Minikube Install and launch.ps1". This scripts performs the following tasks.
+9. Run the script ".\Scripts\Minikube Install and launch.ps1". This script performs the following tasks.
 
     a. Download latest version of Minikube from https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe
 
@@ -42,7 +42,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Install Helm Charts
 
-10. Run the script ".\Scripts\3. Helm Charts Installation.ps1". This scripts performs the following tasks.
+10. Run the script ".\Scripts\3. Helm Charts Installation.ps1". This script performs the following tasks.
 
                 a. Installs chocolatey
                 
@@ -53,7 +53,7 @@ To gain some basic understanding on the deployment architecture please refer htt
  ### Prepare Pega docker images for your installation.
  
 
-11. Run the follwing command with the correct paramater values. This scripts performs the tasks mentioned below.
+11. Run the follwing command with the correct paramater values. This script performs the tasks mentioned below.
 
     Command: 
     
@@ -70,7 +70,7 @@ To gain some basic understanding on the deployment architecture please refer htt
           
  ### Prepare Values for Pega Helm Charts
  
- 12. Run the script ".\Scripts\5. Prepare Values for Pega Helm Charts.ps1". This scripts performs the following tasks.
+ 12. Run the script ".\Scripts\5. Prepare Values for Pega Helm Charts.ps1". This script performs the following tasks.
 
           a. Add the Pega repository to your Helm installation.
           b. Get latest values-minimal.yaml
@@ -78,7 +78,7 @@ To gain some basic understanding on the deployment architecture please refer htt
  13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\Sample-values-minimal.yaml".  
 
  ### Deploy Pega on Kubernetes
- 14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This scripts performs the following tasks. 
+ 14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This script performs the following tasks. 
 
           a. Create required namespace.
           b. Installs pega helm charts passing values-values.yaml.
