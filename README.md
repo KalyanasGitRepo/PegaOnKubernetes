@@ -8,9 +8,9 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
-2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location.
+2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location. We need these credentials for Step: 11
 
-3. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository.
+3. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository. We need these credentials for Step: 11
 
 4. Download & install Pega Personal Edition https://community.pega.com/digital-delivery
 
