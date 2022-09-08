@@ -15,3 +15,26 @@
     b. Triggers Docker Desktop installation.
     
  5. Restart your machine after step 5. Please make sure Docker Desktop launches successfully and runs docker in Linux Containers mode. 
+
+### Install Minikube
+
+6. Run the script ".\Scripts\Minikube Install and launch.ps1". This scripts performs the following tasks.
+
+    a. Download latest version of Minikube from https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe
+
+    b. Sets PATH environment valiable to appends Minikube installation path.
+
+    c. Launches Minikube with 4 CPU, and 12 GB Memory units
+
+
+
+### Install Helm Charts
+
+7. Run the script ".\Scripts\3. Helm Charts Installation.ps1". This scripts performs the following tasks.
+
+                a. Installs chocolatey
+                
+                b. Installs helm
+                
+                c. Sets PATH environment valiable to appends helm tools installation path.
+               
