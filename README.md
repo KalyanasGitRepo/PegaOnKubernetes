@@ -84,7 +84,7 @@ To gain some basic understanding on the deployment architecture please refer htt
           b. Installs pega helm charts passing values-values.yaml.
           
           
- ### Check Deployment Status  & launch pega interface
+ ### Check deployment status  & launch pega interface
  16. Various commands to check the overall deployment status and Pod logs
 
         kubectl get all --namespace=mypega
