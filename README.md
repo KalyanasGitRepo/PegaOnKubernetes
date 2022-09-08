@@ -4,7 +4,7 @@
 
 2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId andAPI key in a secure location.
 
-3. Download & Install Pega Personal Edition https://community.pega.com/digital-delivery
+3. Download & install Pega Personal Edition https://community.pega.com/digital-delivery
 
 4. Optional: Download and install pgAdmin https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v6.13/windows/pgadmin4-6.13-x64.exe
 
