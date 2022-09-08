@@ -84,9 +84,13 @@ To gain some basic understanding on the deployment architecture please refer htt
  16. Various commands to check the overall deployment status and Pod logs
 
         kubectl get all --namespace=mypega
+        
         kubectl describe  pod pega-app1-dev-minikube-0 --namespace=mypega
+        
         kubectl describe  service pega-app1-dev-minikube --namespace=mypega
+        
         kubectl logs pega-app1-dev-minikube-0 --namespace=mypega
+        
     
   17 Run the following command to launch the service 
    
