@@ -2,7 +2,7 @@
 
 1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
-2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId andAPI key in a secure location.
+2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location.
 
 3. Make sure your have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository.
 
