@@ -75,6 +75,7 @@ To gain some basic understanding on the deployment architecture please refer htt
     Please check the sample file Configuration\pg_hba.conf for your reference.
 
 host    all     all             0.0.0.0/0            md5
+
 host    all     all             ::/0            md5
  
 14.  Optional: For any additional logging or tracing customize the following lines  in the files C:\Program Files\PostgreSQL\14\data\postgres.conf 
