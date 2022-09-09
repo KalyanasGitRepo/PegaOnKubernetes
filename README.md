@@ -6,17 +6,17 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Prerequisites
 
-1. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
+1. Get the script files locally https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip extract the contents of the Zip file into D:\PegaOnKubernetes.
 
-2. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location. We need these credentials for Step: 11
+2. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
-3. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository. We need these credentials for Step: 11
+3. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location. We need these credentials for Step: 12
 
-4. Download & install Pega Personal Edition https://community.pega.com/digital-delivery
+4. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository. We need these credentials for Step: 12
 
-5. Optional: Download and install pgAdmin https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v6.13/windows/pgadmin4-6.13-x64.exe
+5. Request access for Pega Platform from https://my.pega.com/mypegaprd/PRAuth under my software section.
 
-6. Get the script files locally https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip
+6. Download latest Pega Platform 8.7 compressed distribution image into "D:\PegaOnKubernetes\PegaInstaller\"  folder; and extract the complressed file into the same folder. 
 
 ### Install docker
 
@@ -37,8 +37,6 @@ To gain some basic understanding on the deployment architecture please refer htt
     b. Sets PATH environment variable to append Minikube installation path.
 
     c. Launches Minikube with 4 CPU, and 12 GB Memory units
-
-
 
 ### Install Helm Charts
 
@@ -67,25 +65,63 @@ To gain some basic understanding on the deployment architecture please refer htt
           e. Tags images
           f. Login into your private Docker Registry.
           g. Pushes the tagged images into your private Docker registry
-          
+ 
+ ### PostgresDB Server preparation
+ 
+12. Install Postgres database server (listening on Port: 5432) from https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid=db55e32d-e9f0-4d7c-9aef-b17d01210704&campaignId=7012J000001NhszQAC
+
+ 
+13. To allow remote connections, append the following line to the file C:\Program Files\PostgreSQL\14\data\pg_hba.conf. 
+    Please check the sample file Configuration\pg_hba.conf for your refrence.
+
+host    all     all             0.0.0.0/0            md5
+host    all     all             ::/0            md5
+ 
+14.  Optional: For any additional logging or tracing customize the following lines  in the files C:\Program Files\PostgreSQL\14\data\postgres.conf 
+
+    Please check the sample file Configuration\postgres.conf for your refrence. Caution: These setting can consume excessive disk space
+    
+        log_statement = 'all' 
+        log_directory = 'log'
+        log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+        log_min_error_statement = error
+        log_line_prefix = 'ip %h, usr %u, time %t, pid %p %q db %d, app %a, line %l '
+
+15. Restart the postgres database service. 
+
+    Restart-Service -DisplayName 'postgresql-x64-14 - PostgreSQL Server 14'
+
+16. Run the script ".\Scripts\6. Database-Schema-Users.ps1". This script performs the following tasks. 
+
+          a. Sets Path environment variable.
+          b. Creates "pegadb" empty database
+          c. Creates users ("base-user", "admin-user") with required priviliges.
+          d. Creates schemas "data", "rules"
+          e. Downloads JDBC Driver for Postgres into "C:\PostgresJDBCDriver\postgresql-42.5.0.jar". This file location will be used in the configuration of next step. 
+
+
+17. Configure \117271_Pega8.7.3\scripts\setupDatabase.properties file. For more details please refer the sample configuration at \Configuration\setupDatabase.properties
+
+18. Run the script ".\Scripts\"7. Load-Rules-Data-Schemas.ps1". This script invokes "install.bat".
+
  ### Prepare Values for Pega Helm Charts
  
- 12. Run the script ".\Scripts\5. Prepare Values for Pega Helm Charts.ps1". This script performs the following tasks.
+ 19. Run the script ".\Scripts\5. Prepare Values for Pega Helm Charts.ps1". This script performs the following tasks.
 
           a. Add the Pega repository to your Helm installation.
           b. Get latest values-minimal.yaml
           
- 13. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\Sample-values-minimal.yaml".  
+ 20. Configure values-minimal.yaml file. You can make use of sample configuration (properly configured and it works) from ".\Configuration\Sample-values-minimal.yaml".  
 
  ### Deploy Pega on Kubernetes
- 14. Run the script ".\Scripts\6. Deploy Pega on Kubernetes.ps1". This script performs the following tasks. 
+ 21. Run the script ".\Scripts\8. Deploy Pega on Kubernetes.ps1". This script performs the following tasks. 
 
           a. Create required namespace.
           b. Installs pega helm charts passing values-values.yaml.
           
           
  ### Check deployment status  & launch pega interface
- 16. Various commands to check the overall deployment status and Pod logs
+ 22. Various commands to check the overall deployment status and Pod logs
 
         kubectl get all --namespace=mypega
         
@@ -96,13 +132,13 @@ To gain some basic understanding on the deployment architecture please refer htt
         kubectl logs pega-app1-dev-minikube-0 --namespace=mypega
         
     
-  17 Run the following command that launches pega platform on the browser. 
+  23 Run the following command that launches pega platform on the browser. 
    
         minikube service pega-app1-dev-minikube --namespace=mypega
    
  # Key Points, Challenges & Solutions
  
- 18. Key Points, Challenges & Solutions.
+ 24. Key Points, Challenges & Solutions.
 
         a. Missing access rights on pega docker images repository. Raise a request for "My Pega Docker Image Access" from https://sm.pega.co and gained access to the repository.
 
@@ -117,10 +153,4 @@ To gain some basic understanding on the deployment architecture please refer htt
         f. Make sure values-minimal.yaml is configured with sufficient CPU and memory units.
 
         g. Database connectivity issues: Make sure connection string is correctly configured with the Host IP and Port number. Please check if database service is up and running.
-
-
-
-   
-   
-    
 

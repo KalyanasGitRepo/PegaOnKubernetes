@@ -8,6 +8,8 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
   [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine) `
 }
 
+[Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+
 #3. Launch Minikube with sufficient CPU and Memory
 minikube config set driver docker
 minikube start --cpus 4 --memory 12288
