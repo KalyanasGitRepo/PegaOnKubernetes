@@ -100,17 +100,17 @@ global:
     - name: "minikube"
       nodeType: "Stream,BackgroundProcessing,WebUser,Search"
       livenessProbe:
-        initialDelaySeconds: 120
+        initialDelaySeconds: 300
         timeoutSeconds: 300
         failureThreshold: 300
       
       readinessProbe:
-        initialDelaySeconds: 120
+        initialDelaySeconds: 300
         timeoutSeconds: 300
         failureThreshold: 300
         
       startupProbe:
-        initialDelaySeconds: 120
+        initialDelaySeconds: 300
         timeoutSeconds: 300
         failureThreshold: 300
         
