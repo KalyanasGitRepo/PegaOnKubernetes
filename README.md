@@ -78,9 +78,9 @@ host    all     all             0.0.0.0/0            md5
 
 host    all     all             ::/0            md5
  
-14.  Optional: For any additional logging or tracing customize the following lines  in the files C:\Program Files\PostgreSQL\14\data\postgres.conf 
+14.  Optional: For any additional logging or tracing customize the following lines as per your needs in the file C:\Program Files\PostgreSQL\14\data\postgres.conf 
 
-    Please check the sample file Configuration\postgres.conf for your reference. Caution: These setting can consume excessive disk space
+    Please check the sample file Configuration\postgres.conf for your reference. Caution: These setting can consume excessive disk space.
     
         log_statement = 'all' 
         log_directory = 'log'
