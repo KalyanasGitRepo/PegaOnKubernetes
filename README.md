@@ -16,7 +16,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 5. Request access for Pega Platform from https://my.pega.com/mypegaprd/PRAuth under my software section.
 
-6. Download latest Pega Platform 8.7 compressed distribution image into "D:\PegaOnKubernetes\PegaInstaller\"  folder; and extract the complressed file into the same folder. 
+6. Download latest Pega Platform 8.7 compressed distribution image into "D:\PegaOnKubernetes\PegaInstaller\"  folder; and extract the compressed file into the same folder. 
 
 ### Install docker
 
@@ -51,7 +51,7 @@ To gain some basic understanding on the deployment architecture please refer htt
  ### Prepare Pega docker images for your installation.
  
 
-11. Run the follwing command with the correct paramater values. This script performs the tasks mentioned below.
+11. Run the following command with the correct parameter values. This script performs the tasks mentioned below.
 
     Command: 
     
@@ -72,14 +72,14 @@ To gain some basic understanding on the deployment architecture please refer htt
 
  
 13. To allow remote connections, append the following line to the file C:\Program Files\PostgreSQL\14\data\pg_hba.conf. 
-    Please check the sample file Configuration\pg_hba.conf for your refrence.
+    Please check the sample file Configuration\pg_hba.conf for your reference.
 
 host    all     all             0.0.0.0/0            md5
 host    all     all             ::/0            md5
  
 14.  Optional: For any additional logging or tracing customize the following lines  in the files C:\Program Files\PostgreSQL\14\data\postgres.conf 
 
-    Please check the sample file Configuration\postgres.conf for your refrence. Caution: These setting can consume excessive disk space
+    Please check the sample file Configuration\postgres.conf for your reference. Caution: These setting can consume excessive disk space
     
         log_statement = 'all' 
         log_directory = 'log'
@@ -95,10 +95,9 @@ host    all     all             ::/0            md5
 
           a. Sets Path environment variable.
           b. Creates "pegadb" empty database
-          c. Creates users ("base-user", "admin-user") with required priviliges.
+          c. Creates users ("base-user", "admin-user") with required privileges.
           d. Creates schemas "data", "rules"
           e. Downloads JDBC Driver for Postgres into "C:\PostgresJDBCDriver\postgresql-42.5.0.jar". This file location will be used in the configuration of next step. 
-
 
 17. Configure \117271_Pega8.7.3\scripts\setupDatabase.properties file. For more details please refer the sample configuration at \Configuration\setupDatabase.properties
 
@@ -153,4 +152,5 @@ host    all     all             ::/0            md5
         f. Make sure values-minimal.yaml is configured with sufficient CPU and memory units.
 
         g. Database connectivity issues: Make sure connection string is correctly configured with the Host IP and Port number. Please check if database service is up and running.
+
 
