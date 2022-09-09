@@ -6,7 +6,7 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Prerequisites
 
-1. Get the script files locally https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip extract the contents of the Zip file into D:\PegaOnKubernetes.
+1. Get the script files locally https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip  and extract the contents of the Zip file into D:\PegaOnKubernetes.
 
 2. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
