@@ -66,7 +66,7 @@ To gain some basic understanding on the deployment architecture please refer htt
           f. Login into your private Docker Registry.
           g. Pushes the tagged images into your private Docker registry
  
- ### PostgresDB Server preparation
+ ### Prepare Postgres Database Server 
  
 12. Install Postgres database server (listening on Port: 5432) from https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid=db55e32d-e9f0-4d7c-9aef-b17d01210704&campaignId=7012J000001NhszQAC
 
