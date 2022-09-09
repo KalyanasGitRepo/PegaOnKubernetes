@@ -66,3 +66,12 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA rules GRANT EXECUTE ON FUNCTIONS TO "base-use
 	
 --Optional: Installing PL/Java for Java user-defined functions
 --Optional: Creating the sqlj schema for importing Java user-defined functions
+
+
+
+ALTER ROLE "base-user" IN DATABASE pegadb
+    SET search_path TO data,rules;
+ALTER ROLE "admin-user" IN DATABASE pegadb
+    SET search_path TO data,rules;
+ALTER ROLE postgres IN DATABASE pegadb
+    SET search_path TO data,rules;
