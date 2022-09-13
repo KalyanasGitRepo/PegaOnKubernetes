@@ -6,13 +6,13 @@ To gain some basic understanding on the deployment architecture please refer htt
 
 ### Prerequisites
 
-1. Get the script files locally https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip  and extract the contents of the Zip file into D:\PegaOnKubernetes.
+1. Copy the script file https://github.com/KalyanasGitRepo/PegaOnKubernetes/archive/refs/heads/main.zip into a local folder and extract the contents of the Zip file into D:\PegaOnKubernetes.
 
 2. Request access for "My Pega Docker Image Access" from https://sm.pega.com.
 
-3. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location. We need these credentials for Step: 12
+3. Request for API access keys (For more details refer: https://docs.pega.com/client-managed-cloud/87/pega-provided-docker-images). Store UserId and API key in a secure location. We need these credentials for Step: 11
 
-4. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository. We need these credentials for Step: 12
+4. Make sure you have your own private docker registry to maintain your docker images. Generate APIKey to push images to your repository. We need these credentials for Step: 11
 
 5. Request access for Pega Platform from https://my.pega.com/mypegaprd/PRAuth under my software section.
 
@@ -140,13 +140,13 @@ host    all     all             ::/0            md5
  
  24. Key Points, Challenges & Solutions.
 
-        a. Missing access rights on pega docker images repository. Raise a request for "My Pega Docker Image Access" from https://sm.pega.co and gained access to the repository.
+        a. Missing access rights on pega docker images repository. Raise a request for "My Pega Docker Image Access" from https://sm.pega.co to gain access to the repository.
 
         b. Make sure correct version of docker images are mentioned the values.yaml for pega, pega-installer, hazelcast & Search images.
 
-        c. Probes timeout issues: Can be resolve by increasing initialDelaySeconds, timeoutSeconds, failureThreshold.
+        c. Probes timeout issues: Can be resolved by increasing initialDelaySeconds, timeoutSeconds, failureThreshold.
 
-        d. Incorrect Jdbc DriverUri: Replaced with correct version of Jdbc driver. The one mentioned in the sample values-minimal.yaml file should work with latest version of pega.
+        d. Incorrect Jdbc DriverUri: Replace with correct version of Jdbc driver. The one mentioned in the sample values-minimal.yaml file should work with latest version of pega.
 
         e. Connectivity issues between the host machine and Minikube pods & services. Make sure correct Host IP is mentioned for the Jdbc connection string.
 
